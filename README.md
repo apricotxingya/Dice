@@ -1,4 +1,18 @@
-﻿# Dice!
+﻿# 测试中的扩展功能
+Log记录与染色、邮件发送模块、文件抽取功能、喵稣噜属性作成。
+
+该测试版骰子QQ:1951842966。欢迎大家提出意见和建议。具体指令可.help查看。
+
+基线系统见：https://github.com/w4123/Dice
+
+## 额外配置：
+1、需要在系统中安装python2.7.16(可在python官方网站的历史版本中找到，默认安装到C:\Python2786路径。),然后安装python-docx库。
+
+2、在VS的解决方案右键->属性->VC++目录->库目录中添加该Python环境的libs目录。(默认为C:\Python2786\libs)。
+
+3、将Files目录中的文件放到任意位置，并在代码中搜索"F://"(没有双引号),修改对应的路径。(默认路径为"F://"。下一版本中将把该路径设置为一个全局变量。)
+
+# Dice!
 QQ Dice Robot For TRPG Based on CoolQ 
 
 [![License](https://img.shields.io/github/license/w4123/Dice.svg)](http://www.gnu.org/licenses)
@@ -31,12 +45,6 @@ Latest Release: [![GitHub release](https://img.shields.io/github/release-pre/w41
 从GitHub克隆源码时请不要直接从master分支克隆, 因为所有的更改都会提交到此分支, 很有可能包含最新的测试性更改, 未经过测试无法保证稳定 请选择Tag中最新的Release进行下载
 
 请使用最新版Visual Studio **2015或2017** (或其独立编译器)进行编译, 项目主文件为Dice.sln, 编译时务必使用Win32模式否则无法编译成功
-
-新增: 现在可以用GCC/Clang编译, 只测试了几个版本, 编译出现问题请反馈, 下面列出编译选项, 正在写cmake
-
-- GCC: ` g++ -shared -static -std=c++14 -O2 -o com.w4123.dice.dll -Wl,--kill-at -I CQSDK\ -I Dice\ CQSDKCPP\*.cpp Dice\*.cpp Dice\CQP.lib -pthread -lWinInet -luser32 `
-- Clang+MSVC: ` clang++ --target=i686-pc-windows-msvc  -m32 -shared -static -o com.w4123.dice.dll -Xclang -flto-visibility-public-std -std=c++14 -O2 -I CQSDK\ -I Dice\ CQSDKCPP\*.cpp Dice\*.cpp Dice\CQP.lib -lWinInet -luser32 -pthread -Wno-invalid-source-encoding `
-- Clang+GCC: ` clang++ --target=i686-pc-windows-gnu -m32 -shared -static -o com.w4123.dice.dll -Xclang -flto-visibility-public-std -Wl,--kill-at -std=c++14 -O2 -I CQSDK\ -I Dice\ CQSDKCPP\*.cpp Dice\*.cpp Dice\CQP.lib -lWinInet -luser32 -pthread -Wno-invalid-source-encoding  `
 
 编译后会得到com.w4123.dice.dll文件, 请勿更改此文件的名称! 请从Releases中下载对应的json文件(或自己编写), 放至酷Q app文件夹下, 并开启开发模式, 在应用管理中合成cpk文件即可正常使用
 
